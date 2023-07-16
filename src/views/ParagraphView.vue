@@ -3,17 +3,16 @@ import Paragraph from '@/components/Paragraph.vue'
 import { useParagraph } from '@/composables/paragraph'
 import { useRoute } from 'vue-router'
 
-const route = useRoute();
+const route = useRoute()
 const { txt, setText } = useParagraph(
-    typeof route.query['text'] === 'string' ? route.query['text']: ''
+    typeof route.query['text'] === 'string' ? route.query['text'] : ''
 )
 
 type onInputCallback = (e: Event) => void
 
-const onInput: onInputCallback = e => {
+const onInput: onInputCallback = (e) => {
     setText((e.target as HTMLInputElement).value)
 }
-
 </script>
 
 <template>
@@ -22,5 +21,5 @@ const onInput: onInputCallback = e => {
     <Paragraph />
     <Paragraph />
     <Paragraph />
-    <input type="text" @input="onInput" :value="txt">
+    <input type="text" @input="onInput" :value="txt" />
 </template>

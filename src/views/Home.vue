@@ -5,8 +5,8 @@ import { useUserStore } from '@/stores/user'
 import { useItemsStore } from '@/stores/items'
 
 const { text, capitalizeText } = useCapitalizeText()
-const userStore = useUserStore();
-const itemsStore = useItemsStore();
+const userStore = useUserStore()
+const itemsStore = useItemsStore()
 
 onMounted(() => {
     setTimeout(() => {
@@ -21,9 +21,7 @@ onMounted(() => {
 
 <template>
     <div>
-        <p v-for="(value, key, i) in userStore.user" :key="i">
-            {{ key }}: {{ value }}
-        </p>
+        <p v-for="(value, key, i) in userStore.user" :key="i">{{ key }}: {{ value }}</p>
         <p>user_admin? {{ userStore.isAdmin() ? 'Yes' : 'No' }}</p>
     </div>
     <div v-if="capitalizeText">
@@ -46,7 +44,5 @@ onMounted(() => {
         <button @click="itemsStore.$reset()">reset</button>
     </div>
 
-    <div>
-        First: {{ itemsStore.getUppercasedFirstItem }}
-    </div>
+    <div>First: {{ itemsStore.getUppercasedFirstItem }}</div>
 </template>

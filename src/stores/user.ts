@@ -2,9 +2,9 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
 interface User {
-    id: number;
-    name: string;
-    age: number;
+    id: number
+    name: string
+    age: number
     is_admin: 0 | 1
 }
 
@@ -20,5 +20,5 @@ export const useUserStore = defineStore('user', () => {
         return Boolean(user.value?.is_admin)
     }
 
-    return { user, isAdmin };
+    return { user, isAdmin }
 })

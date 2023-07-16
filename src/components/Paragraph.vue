@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useParagraph } from '@/composables/paragraph'
 
-const { txt } = useParagraph();
+const { txt } = useParagraph()
 </script>
 
 <template>

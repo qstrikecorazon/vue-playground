@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import _ from 'lodash'
 
-type item = string | undefined;
+type item = string | undefined
 
 interface State {
     items: item[]
@@ -28,9 +28,9 @@ export const useItemsStore = defineStore('items', {
         },
 
         removeItem(item: item) {
-            const index = _.findIndex(this.items, i => _.isEqual(i, item))
-            
+            const index = _.findIndex(this.items, (i) => _.isEqual(i, item))
+
             if (index > -1) this.items.splice(index, 1)
-        },
+        }
     }
 })
