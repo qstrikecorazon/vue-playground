@@ -13,6 +13,11 @@ const router = createRouter({
             path: '/paragraph',
             name: 'paragraph',
             component: () => import('@/views/ParagraphView.vue')
+        },
+        {
+            path: '/application',
+            name: 'application',
+            component: () => import('@/views/Pixi.vue')
         }
     ]
 })
