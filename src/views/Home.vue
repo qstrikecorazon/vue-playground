@@ -6,6 +6,11 @@ import { useUserStore } from '@/stores/user'
 const { text, capitalizeText } = useCapitalizeText()
 const userStore = useUserStore();
 
+const arr: string[] = [
+    // 'first',
+    // 'second'
+]
+
 onMounted(() => {
     setTimeout(() => {
         userStore.$patch({
@@ -29,5 +34,9 @@ onMounted(() => {
     </div>
     <div>
         <input type="text" v-model="text" />
+    </div>
+
+    <div>
+        <p> {{ arr?.[0]?.toLowerCase() }}</p>
     </div>
 </template>
